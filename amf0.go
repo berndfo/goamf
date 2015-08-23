@@ -10,6 +10,7 @@ import (
 	"sort"
 	"strings"
 	"time"
+	"log"
 )
 
 //-----------------------------------------------------------------------
@@ -501,7 +502,7 @@ func ReadDate(r Reader) (t time.Time, err error) {
 		// time-zone
 		err = binary.Read(r, binary.BigEndian, &timeZone)
 		if err != nil {
-			fmt.Printf("ReadDate() Read time zone err: %s\n", err)
+			log.Printf("ReadDate() Read time zone err: %s\n", err)
 			return
 		}
 		d /= 1000.0
@@ -510,7 +511,7 @@ func ReadDate(r Reader) (t time.Time, err error) {
 		nsec := int64((d - float64(sec)) * 1000000000.0)
 		t = time.Unix(sec, nsec)
 	} else {
-		fmt.Printf("ReadDate() ReadDouble err: %s\n", err)
+		log.Printf("ReadDate() ReadDouble err: %s\n", err)
 
 	}
 	return

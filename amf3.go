@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"reflect"
 	"sort"
+	"log"
 )
 
 //-----------------------------------------------------------------------
@@ -277,7 +278,7 @@ func AMF3_WriteValue(w Writer, value interface{}) (n int, err error) {
 	} else if vt, ok := value.(Object); ok {
 		return AMF3_WriteObject(w, vt)
 	} else if vt, ok := value.([]interface{}); ok {
-		fmt.Printf("Todo: WriteValue: %+v\n", vt)
+		log.Printf("Todo: WriteValue: %+v\n", vt)
 	}
 	return 0, errors.New("Unsupported type")
 }
