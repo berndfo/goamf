@@ -1,4 +1,4 @@
-GoAMF [![Build Status](https://secure.travis-ci.org/zhangpeihao/goamf.png)](http://travis-ci.org/zhangpeihao/goamf)
+GoAMF [ ![Codeship Status for berndfo/goamf](https://codeship.com/projects/372859a0-343a-0133-e0dc-56c8db4126b8/status?branch=master)](https://codeship.com/projects/100449)
 ======
 
 AFM0 & AMF3 encoding.
